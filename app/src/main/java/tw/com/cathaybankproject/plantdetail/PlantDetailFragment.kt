@@ -38,20 +38,49 @@ class PlantDetailFragment: Fragment(), PlantDetailContract.View {
     }
 
     override fun updateZooPlantDetailInfo(zooPlant: ZooPlant?) {
-        Glide.with(context!!).load(zooPlant?.picUrl).into((view?.findViewById<ImageView>(R.id.iv_top)!!))
+        updateTopImageInfo(zooPlant)
+        updatePlantName(zooPlant)
+        updatePlantAlsoKnown(zooPlant)
+        updatePlantBrief(zooPlant)
+        updatePlantFeature(zooPlant)
+        updatePlantFunctionAndAppilcation(zooPlant)
+        updatePlantUpdateDate(zooPlant)
+    }
+
+    private fun updateTopImageInfo(zooPlant: ZooPlant?) {
+        Glide.with(context!!).load(zooPlant?.picUrl)
+            .into((view?.findViewById(R.id.iv_top)!!))
         view?.findViewById<TextView>(R.id.tv_pic_alt)?.text = "(${zooPlant?.pic01Alt})"
-        val name = zooPlant?.nameCh + "\n" + zooPlant?.nameLatin
-        view?.findViewById<TextView>(R.id.tv_name)?.text = name
-        val also = "別名：\n${zooPlant?.alsoKnown}"
-        view?.findViewById<TextView>(R.id.tv_also)?.text = also
-        val brief = "簡介：\n${zooPlant?.brief}"
-        view?.findViewById<TextView>(R.id.tv_brief)?.text = brief
-        val feature = "辨認方式：\n${zooPlant?.feature}"
-        view?.findViewById<TextView>(R.id.tv_feature)?.text = feature
-        val functionAndApplication = "功能性：\n${zooPlant?.functionAndApplication}"
-        view?.findViewById<TextView>(R.id.tv_function)?.text = functionAndApplication
+    }
+
+    private fun updatePlantUpdateDate(zooPlant: ZooPlant?) {
         val updateDate = "最後更新：${zooPlant?.updateDate}"
         view?.findViewById<TextView>(R.id.tv_update)?.text = updateDate
+    }
+
+    private fun updatePlantFunctionAndAppilcation(zooPlant: ZooPlant?) {
+        val functionAndApplication = "功能性：\n${zooPlant?.functionAndApplication}"
+        view?.findViewById<TextView>(R.id.tv_function)?.text = functionAndApplication
+    }
+
+    private fun updatePlantFeature(zooPlant: ZooPlant?) {
+        val feature = "辨認方式：\n${zooPlant?.feature}"
+        view?.findViewById<TextView>(R.id.tv_feature)?.text = feature
+    }
+
+    private fun updatePlantBrief(zooPlant: ZooPlant?) {
+        val brief = "簡介：\n${zooPlant?.brief}"
+        view?.findViewById<TextView>(R.id.tv_brief)?.text = brief
+    }
+
+    private fun updatePlantAlsoKnown(zooPlant: ZooPlant?) {
+        val also = "別名：\n${zooPlant?.alsoKnown}"
+        view?.findViewById<TextView>(R.id.tv_also)?.text = also
+    }
+
+    private fun updatePlantName(zooPlant: ZooPlant?) {
+        val name = zooPlant?.nameCh + "\n" + zooPlant?.nameLatin
+        view?.findViewById<TextView>(R.id.tv_name)?.text = name
     }
 
     override fun attachPresenter(presenter: PlantDetailContract.Presenter) {

@@ -38,10 +38,7 @@ class AreaListPresenter(var mView: AreaListContract.View?) : AreaListContract.Pr
     fun loadZooAreaData() {
         GlobalScope.launch(Dispatchers.Main) {
             withContext(Dispatchers.IO) {
-                Log.d("de", "GlobalScope.withContext")
                 mView?.updateZooAreaList(fetchZooArea("https://data.taipei/api/getDatasetInfo/downloadResource?id=1ed45a8a-d26a-4a5f-b544-788a4071eea2&rid=5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a"))
-            }.run {
-                Log.d("de", "GlobalScope.run")
             }
         }
     }
@@ -72,7 +69,7 @@ class AreaListPresenter(var mView: AreaListContract.View?) : AreaListContract.Pr
             if (lineCount > 0) {
                 val csvContent = line.split(",")
                 val zooArea = ZooArea(csvContent = csvContent)
-                zooArea.show()
+//                zooArea.show()
                 zooAreaList.add(zooArea)
             }
 
@@ -81,7 +78,6 @@ class AreaListPresenter(var mView: AreaListContract.View?) : AreaListContract.Pr
             line = bufferedReader?.readLine()
             lineCount += 1
         }
-        Log.d("de", "size: ${zooAreaList.size}")
         inputStream.close()
         return zooAreaList
     }

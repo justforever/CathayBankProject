@@ -3,11 +3,6 @@ package tw.com.cathaybankproject.model
 import com.google.gson.annotations.SerializedName
 
 class ZooPlantResponse {
-//    @SerializedName("limit")
-//    var limit: Int = 0
-//
-//    @SerializedName("results")
-//    var results = ArrayList<ZooPlant>()
 
     @SerializedName("result")
     var result: ZooPlantResult? = null

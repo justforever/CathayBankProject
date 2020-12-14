@@ -32,9 +32,6 @@ class AreaListFragment : Fragment(), AreaListContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        view.findViewById<Button>(R.id.button_first).setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-//        }
         hideBackButton()
         updateTitle()
 
@@ -47,9 +44,7 @@ class AreaListFragment : Fragment(), AreaListContract.View {
     private fun setupZooAreaRecyclerView() {
         zooAreaAdapter = ZooAreaListAdapter(activity!!.applicationContext)
         zooAreaAdapter?.onItemClick = {zooArea ->
-            val bundle = bundleOf("areaName" to zooArea.getName(), "areaInfo" to zooArea.getInfo())
-            bundle.putString("picUrl", zooArea.getPicUrl())
-            bundle.putString("category", zooArea.getCategory())
+            val bundle = bundleOf()
             bundle.putSerializable("zooArea", zooArea)
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
         }

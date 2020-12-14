@@ -8,7 +8,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import tw.com.cathaybankproject.model.ZooPlantResponse
 import tw.com.cathaybankproject.network.ApiClient
-import tw.com.cathaybankproject.plantdetail.PlantDetailPresenter
 
 class AreaDetailPresenter(var mView: AreaDetailContract.View): AreaDetailContract.Presenter {
 
@@ -28,11 +27,9 @@ class AreaDetailPresenter(var mView: AreaDetailContract.View): AreaDetailContrac
         val call = service.getZooPlantData(areaName, 10, 0)
         call.enqueue(object : Callback<ZooPlantResponse> {
             override fun onFailure(call: Call<ZooPlantResponse>?, t: Throwable?) {
-                Log.d("de", "loadPlantData.onFailure, ${t.toString()}")
             }
 
             override fun onResponse(call: Call<ZooPlantResponse>?, response: Response<ZooPlantResponse>?) {
-                Log.d("de", "loadPlantData.onResponse, size: ${response?.body()?.result?.results?.size}")
                 mView.updateZooPlantList(response?.body()?.result?.results)
             }
 

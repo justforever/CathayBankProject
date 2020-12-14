@@ -1,6 +1,5 @@
 package tw.com.cathaybankproject.plantdetail
 
-import tw.com.cathaybankproject.areadetail.AreaDetailContract
 import tw.com.cathaybankproject.model.ZooPlant
 
 class PlantDetailPresenter(var mView: PlantDetailContract.View): PlantDetailContract.Presenter {

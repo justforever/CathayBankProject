@@ -3,12 +3,6 @@ package tw.com.cathaybankproject.model
 import android.util.Log
 import java.io.Serializable
 
-//class ZooArea (val no: Int, val category: String,
-//                    val name: String, val picUrl: String,
-//                    val info: String, val memo: String,
-//                    val geo: String, val url: String) {
-//}
-
 class ZooArea(csvContent: List<String>): Serializable {
     private var no = csvContent[0]
     fun getNo() = no

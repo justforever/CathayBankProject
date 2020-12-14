@@ -10,7 +10,6 @@ interface AreaDetailContract {
     }
 
     interface View: BaseView<Presenter> {
-//        fun updateZooAreaList(areaList: MutableList<ZooArea>)
         fun updateZooPlantList(plantList: ArrayList<ZooPlant>?)
     }
 }

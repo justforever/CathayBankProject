@@ -10,7 +10,6 @@ interface PlantDetailContract {
     }
 
     interface View: BaseView<Presenter> {
-//        fun updateZooPlantList(plantList: ArrayList<ZooPlant>?)
         fun updateZooPlantDetailInfo(zooPlant: ZooPlant?)
     }
 }

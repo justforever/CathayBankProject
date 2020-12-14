@@ -49,10 +49,6 @@ class AreaDetailFragment : Fragment(), AreaDetailContract.View {
         showBackButton()
         updateTitle()
 
-//        view.findViewById<Button>(R.id.button_second).setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
-
         view.findViewById<TextView>(R.id.tv_info).text = zooArea?.getInfo()
         view.findViewById<TextView>(R.id.tv_category).text = zooArea?.getCategory()
 
