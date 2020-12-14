@@ -3,26 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/areaListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="tw.com.cathaybankproject.ui.FirstFragment"
+        android:id="@+id/areaListFragment"
+        android:name="tw.com.cathaybankproject.area.AreaListFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_area_list">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/areaDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="tw.com.cathaybankproject.ui.SecondFragment"
+        android:id="@+id/areaDetailFragment"
+        android:name="tw.com.cathaybankproject.areadetail.AreaDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        tools:layout="@layout/fragment_area_detail">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_areaDetailFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="tw.com.cathaybankproject.plantdetail.PlantDetailFragment"
+        android:label="@string/plant_detail_fragment_label"
+        tools:layout="@layout/fragment_plant_detail"/>
 </navigation>

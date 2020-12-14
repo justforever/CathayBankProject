@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_pic_alt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#000"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/iv_top"
+            app:layout_constraintEnd_toEndOf="@id/iv_top"
+            app:layout_constraintTop_toBottomOf="@id/iv_top"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintStart_toStartOf="@id/iv_top"
+            app:layout_constraintEnd_toEndOf="@id/iv_top"
+            app:layout_constraintTop_toBottomOf="@id/tv_pic_alt"/>
+
+        <TextView
+            android:id="@+id/tv_also"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintStart_toStartOf="@id/iv_top"
+            app:layout_constraintEnd_toEndOf="@id/iv_top"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"/>
+
+        <TextView
+            android:id="@+id/tv_brief"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintStart_toStartOf="@id/iv_top"
+            app:layout_constraintEnd_toEndOf="@id/iv_top"
+            app:layout_constraintTop_toBottomOf="@id/tv_also"/>
+
+        <TextView
+            android:id="@+id/tv_feature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintStart_toStartOf="@id/iv_top"
+            app:layout_constraintEnd_toEndOf="@id/iv_top"
+            app:layout_constraintTop_toBottomOf="@id/tv_brief"/>
+
+        <TextView
+            android:id="@+id/tv_function"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintStart_toStartOf="@id/iv_top"
+            app:layout_constraintEnd_toEndOf="@id/iv_top"
+            app:layout_constraintTop_toBottomOf="@id/tv_feature"/>
+
+        <TextView
+            android:id="@+id/tv_update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintStart_toStartOf="@id/iv_top"
+            app:layout_constraintEnd_toEndOf="@id/iv_top"
+            app:layout_constraintTop_toBottomOf="@id/tv_function"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
